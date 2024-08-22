@@ -19,7 +19,7 @@
             </div>
             <div class="body">
                 <h2>Body</h2>
-                <textarea name="post[boby]" placeholder="今日も一日お疲れ様でした。"></textarea>
+                <textarea name="post[body]" placeholder="今日も一日お疲れ様でした。"></textarea>
             </div>
             <input type="submit" volue="store">
         </form>
