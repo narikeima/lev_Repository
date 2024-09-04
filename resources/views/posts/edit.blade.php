@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <title>Blog</title>
-
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-
-    </head>
-    <body class="antialiased">
-        <h1>Blog Name</h1>
+<x-app-layout>
+    <x-slot name="title">ブログの編集</x-slot>
+    <x-slot name="header">ブログの編集</x-slot>
         <form action="/posts/{{ $post->id }}" method="POST">
             @csrf
             @method('PUT')
@@ -29,5 +19,4 @@
         <div class='footer'>
             <a href="/posts/{{ $post->id }}">戻る</a>
         </div>
-    </body>
-</html>
+</x-app-layout>

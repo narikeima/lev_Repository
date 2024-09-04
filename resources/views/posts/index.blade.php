@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <title>Blog</title>
-
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-
-    </head>
-    <body class="antialiased">
+<x-app-layout>
+    <x-slot name="title">トップページ</x-slot>
+    <x-slot name="header">Index</x-slot>
         <h1>Blog Name</h1>
+        <div class="user name">ログインユーザー:{{ Auth::user()->name }}</div>
         <a href="/posts/create">create</a>
         <div class='posts'>
             @foreach ($posts as $post)
@@ -29,6 +21,7 @@
             @endforeach
         </div>
         <div class='paginate'>{{$posts->links()}}</div>
+        
         <script>
             function deletePost(id){
                 'use strict'
@@ -38,5 +31,4 @@
                 }
             }
         </script>
-    </body>
-</html>
+</x-app-layout>
